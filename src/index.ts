@@ -1,17 +1,8 @@
 import { Sorter } from "./Sorter";
-import { NumbersCollection } from "./NumbersCollection";
-import { sortItems } from "./sort";
+import { CharacterCollection } from "./CharactersCollection";
 
-// function style
-console.log(" --- func style --- ");
-console.log(sortItems([897, 0, 23, -4]));
-
-// class style
-const numbersColl = new NumbersCollection([
-	10, 3, -4, 0,
-]);
-const sorter = new Sorter(numbersColl);
-sorter.sort();
-
-console.log(" --- class style --- ");
-console.log(numbersColl.data);
+const characters = new CharacterCollection(
+	"CbHuwwi"
+);
+const sorter = new Sorter(characters);
+console.log(sorter.collection);

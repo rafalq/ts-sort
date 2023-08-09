@@ -1,4 +1,3 @@
-import { NumbersCollection } from "./NumbersCollection";
 import { Sortable } from "./Sortable";
 
 export class Sorter {

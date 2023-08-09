@@ -1,22 +1,33 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortItems = void 0;
-function compare(data, leftIndex, rightIndex) {
-    return data[leftIndex] > data[rightIndex];
-}
-function swap(data, leftIndex, rightIndex) {
-    const leftHand = data[leftIndex];
-    data[leftIndex] = data[rightIndex];
-    data[rightIndex] = leftHand;
-}
 function sortItems(collection) {
-    for (let i = 0; i < collection.length; i++) {
-        for (let j = 0; j < collection.length - i - 1; j++) {
-            if (compare(collection, j, j + 1)) {
-                swap(collection, j, j + 1);
+    let checkedCollection;
+    if (typeof collection === "string") {
+        checkedCollection = collection.split("");
+    }
+    else {
+        checkedCollection = collection;
+    }
+    const { length } = checkedCollection;
+    for (let i = 0; i < length; i++) {
+        for (let j = 0; j < length - i - 1; j++) {
+            if (checkedCollection[j] >
+                checkedCollection[j + 1]) {
+                const leftHand = checkedCollection[j];
+                checkedCollection[j] =
+                    checkedCollection[j + 1];
+                checkedCollection[j + 1] = leftHand;
             }
         }
     }
-    return collection;
+    // if (typeof collection === "string") {
+    // 	return checkedCollection.join("");
+    // }
+    // return checkedCollection;
+    if (typeof collection === "string")
+        console.log(checkedCollection.join(""));
+    else
+        console.log(checkedCollection);
 }
 exports.sortItems = sortItems;
