@@ -1,4 +1,4 @@
-export function compare(
+function compare(
 	data: number[],
 	leftIndex: number,
 	rightIndex: number
@@ -6,7 +6,7 @@ export function compare(
 	return data[leftIndex] > data[rightIndex];
 }
 
-export function swap(
+function swap(
 	data: number[],
 	leftIndex: number,
 	rightIndex: number
