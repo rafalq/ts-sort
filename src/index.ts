@@ -3,6 +3,7 @@ import { sortNumbers } from "./functions/sortNumbers";
 import { sortCharacters } from "./functions/sortCharacters";
 import { CharacterCollection } from "./classes/CharactersCollection";
 import { NumbersCollection } from "./classes/NumbersCollection";
+import { LinkedList } from "./classes/LinkedList";
 import { sortItems } from "./functions/sortItems";
 
 const characters = "CbHuwwi";
@@ -21,9 +22,17 @@ const numbersSorter = new Sorter(
 	numbersCollection
 );
 
+const linkedList = new LinkedList();
+for (let num of numbersArr) {
+	linkedList.add(num);
+}
+const linkedListSorter = new Sorter(linkedList);
+linkedListSorter.sort();
+
 console.log("--- class style ---");
 console.log(charactersSorter.collection);
 console.log(numbersSorter.collection);
+linkedList.print();
 
 console.log("--- func style ----");
 console.log(sortNumbers(numbersArr));
